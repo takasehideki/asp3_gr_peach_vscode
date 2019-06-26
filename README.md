@@ -22,6 +22,16 @@ TOPPERS/ASP3カーネルとアプリをVisual Studio Codeで開発可能にす�
 * [Makefile.target](./asp3/target/gr_peach_gcc/Makefile.target) 21行目: 実行形態をRAM実行に変更（EXECUTE_ON = ROM）
 * [apps/sample1/Makefile](./apps/sample1/Makefile) 74行名: オブジェクトファイル名の拡張子を elf に変更（OBJEXT = elf）
 
+## 使用方法
+
+下記のQiita記事をご参照ください
+
+* [VSCodeでTOPPERSアプリをビルド＆実行する](https://qiita.com/takasehideki/items/fa0a1a6567a22f469515)
+
+現在の問題として，デバッグ対象のアプリ指定の煩雑さがあります．
+アプリ指定を変更する際には，[apps/.vscode/launch.json](apps/.vscode/launch.json)の記述を変更（sample1をディレクトリ名に全置換）する必要があります．
+エレガントな良い方法をご存知でしたら教えてください^^;
+
 ## ライセンス等
 
 [TOPPERSライセンス](http://toppers.jp/license.html)に従います．  
