@@ -18,8 +18,8 @@ TOOL = gcc
 #  フラッシュメモリ（ROM）に書き込むか，RAMにロードして実行するかを選択
 #  する．
 #
-#EXECUTE_ON = ROM
-EXECUTE_ON = RAM
+EXECUTE_ON = ROM
+#EXECUTE_ON = RAM
 
 #
 #  ブートローダの組込み
