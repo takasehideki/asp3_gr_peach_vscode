@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+#
+#		パス2の生成スクリプトのターゲット依存部（CT11MPCore用）
+#
+#  $Id: target_kernel.trb 745 2016-04-10 17:00:12Z ertl-hiro $
+#
+
+#
+#  使用できる割込み番号とそれに対応する割込みハンドラ番号
+#
+$INTNO_VALID = [ *(0..47) ]
+$INHNO_VALID = $INTNO_VALID
+
+#
+#  生成スクリプトのコア依存部（チップ依存部は飛ばす）
+#
+IncludeTrb("core_kernel.trb")

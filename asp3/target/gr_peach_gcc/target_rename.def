@@ -1,0 +1,13 @@
+# target_kernel_impl.c
+target_initialize
+target_exit
+
+# tTraceLog.c
+log_dsp_enter
+log_dsp_leave
+log_inh_enter
+log_inh_leave
+log_exc_enter
+log_exc_leave
+
+INCLUDE "chip"

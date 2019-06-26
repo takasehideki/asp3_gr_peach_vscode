@@ -1,0 +1,42 @@
+#
+#		Makefileのチップ依存部（MPCore用）
+#
+#  $Id: Makefile.chip 484 2016-01-03 15:13:38Z ertl-hiro $
+# 
+
+#
+#  チップ依存部ディレクトリ名の定義
+#
+CHIPDIR = $(SRCDIR)/arch/$(CORE)_$(TOOL)/$(CHIP)
+
+#
+#  コンパイルオプション
+#
+INCLUDES := $(INCLUDES) -I$(CHIPDIR)
+
+#
+#  ARM11とCortex-A9の切り分け
+#  
+ifeq ($(MPCORE_TYPE),ARM11)
+	COPTS := $(COPTS) -mcpu=mpcore
+	LDFLAGS := $(LDFLAGS) -mcpu=mpcore
+	CDEFS := $(CDEFS) -D__TARGET_ARCH_ARM=6
+endif
+ifeq ($(MPCORE_TYPE),CA9)
+	COPTS := $(COPTS) -mcpu=cortex-a9
+	LDFLAGS := $(LDFLAGS) -mcpu=cortex-a9
+	CDEFS := $(CDEFS) -D__TARGET_ARCH_ARM=7
+endif
+
+#
+#  カーネルに関する定義
+#
+KERNEL_DIRS := $(KERNEL_DIRS) $(CHIPDIR)
+KERNEL_ASMOBJS := $(KERNEL_ASMOBJS) gic_support.o
+KERNEL_COBJS := $(KERNEL_COBJS) chip_kernel_impl.o gic_kernel_impl.o \
+															chip_timer.o
+
+#
+#  コア依存部
+#
+include $(SRCDIR)/arch/$(CORE)_$(TOOL)/common/Makefile.core

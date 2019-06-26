@@ -1,0 +1,72 @@
+#
+#		Makefileのターゲット依存部（CT11MPcore用）
+#
+#  $Id: Makefile.target 791 2017-07-02 18:46:36Z ertl-hiro $
+# 
+
+#
+#  システム名，チップ名，コア名，開発環境名の定義
+#
+SYS = ct11mpcore
+CHIP = mpcore
+CORE = arm
+TOOL = gcc
+
+#
+#  QEMUに関する定義
+#
+#  QEMU上で実行する場合には，TOPPERS_USE_QEMUをマクロ定義する．QEMUの
+#  Semihostingを使わない場合には，TOPPERS_OMIT_QEMU_SEMIHOSTINGをマクロ
+#  定義する．Semihostingを使う場合には，QEMUの起動時に，-semihostingオ
+#  プションをつけることが必要である．
+#
+#COPTS := $(COPTS) -DTOPPERS_USE_QEMU
+#COPTS := $(COPTS) -DTOPPERS_OMIT_QEMU_SEMIHOSTING
+
+#
+#  MPCoreの種類の定義
+#
+MPCORE_TYPE = ARM11
+
+#
+#  各セグメントの開始アドレスの定義
+#
+TEXT_START_ADDRESS=0x01000000
+DATA_START_ADDRESS=0x01800000
+
+#
+#  コンパイルオプション
+#
+INCLUDES := $(INCLUDES) -I$(TARGETDIR)
+COPTS := $(COPTS) -mlittle-endian
+LDFLAGS := $(LDFLAGS) -mlittle-endian
+
+#
+#  カーネルに関する定義
+#
+KERNEL_DIRS := $(KERNEL_DIRS) $(TARGETDIR)
+KERNEL_COBJS := $(KERNEL_COBJS) target_kernel_impl.o target_timer.o
+
+#
+#  システムサービスに関する定義
+#
+SYSSVC_DIRS := $(SYSSVC_DIRS) $(SRCDIR)/arch/arm_gcc/common
+SYSSVC_COBJS := $(SYSSVC_COBJS)
+
+#
+#  トレースログ記録のサンプルコードに関する定義
+#
+ifdef ENABLE_TRACE
+	COPTS := $(COPTS) -DTOPPERS_ENABLE_TRACE
+	SYSSVC_DIRS := $(SYSSVC_DIRS) $(SRCDIR)/arch/tracelog
+endif
+
+#
+#  リンカスクリプトの定義
+#
+LDSCRIPT = $(TARGETDIR)/ct11mpcore.ld
+
+#
+#  チップ依存部
+#
+include $(SRCDIR)/arch/arm_gcc/mpcore/Makefile.chip

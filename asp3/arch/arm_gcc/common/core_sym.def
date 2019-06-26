@@ -1,0 +1,7 @@
+TARGET_ARCH_ARM,__TARGET_ARCH_ARM
+USE_INTCFG_TABLE,true,bool,defined(USE_INTCFG_TABLE)
+sizeof_TCB,sizeof(TCB)
+offsetof_TCB_p_tinib,"offsetof(TCB,p_tinib)"
+offsetof_TCB_sp,"offsetof(TCB,tskctxb.sp)"
+offsetof_TCB_pc,"offsetof(TCB,tskctxb.pc)"
+offsetof_T_EXCINF_cpsr,"offsetof(T_EXCINF,cpsr)"

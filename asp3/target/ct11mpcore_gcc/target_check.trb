@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+#
+#		パス3の生成スクリプトのターゲット依存部（CT11MPCore用）
+#
+#  $Id: target_check.trb 745 2016-04-10 17:00:12Z ertl-hiro $
+#
+
+#
+#  生成スクリプトのコア依存部（チップ依存部は飛ばす）
+#
+IncludeTrb("core_check.trb")

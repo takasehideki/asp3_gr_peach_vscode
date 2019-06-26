@@ -1,0 +1,46 @@
+PACKAGE asp3_arch_arm_gcc
+VERSION 3.2.0
+
+MANIFEST
+
+doc/arm_design.txt
+doc/arm_user.txt
+doc/gic_design.txt
+
+common/Makefile.core
+common/arm.c
+common/arm.h
+common/arm_insn.h
+common/core_asm.inc
+common/core_cfg1_out.h
+common/core_check.trb
+common/core_kernel.h
+common/core_kernel.trb
+common/core_kernel_impl.c
+common/core_kernel_impl.h
+common/core_offset.trb
+common/core_rename.def
+common/core_rename.h
+common/core_sil.h
+common/core_stddef.h
+common/core_support.S
+common/core_sym.def
+common/core_syssvc.h
+common/core_test.h
+common/core_unrename.h
+common/gic_kernel_impl.c
+common/gic_kernel_impl.h
+common/gic_support.S
+common/pl310.c
+common/pl310.h
+common/sp804.h
+common/start.S
+common/tUartPL011.c
+common/tUartPL011.cdl
+common/uart_pl011.h
+
+INCLUDE mpcore/MANIFEST
+INCLUDE rza1/MANIFEST
+
+INCLUDE ../../target/ct11mpcore_gcc/MANIFEST
+INCLUDE ../../target/gr_peach_gcc/MANIFEST
