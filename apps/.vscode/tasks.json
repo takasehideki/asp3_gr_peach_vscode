@@ -22,7 +22,7 @@
     "tasks": [
         {
             "label": "build allapps",
-            "command": "cd apps ; make all",
+            "command": "make all",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -30,7 +30,7 @@
         },
         {
             "label": "clean allapps",
-            "command": "cd apps ; make clean",
+            "command": "make clean",
             "group": {
                 "kind": "build",
                 "isDefault": true

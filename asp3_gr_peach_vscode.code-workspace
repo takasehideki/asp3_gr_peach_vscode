@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "apps"
+		},
+		{
+			"path": "asp3"
 		}
 	],
 	"settings": {
