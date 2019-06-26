@@ -1,5 +1,6 @@
 # asp3_gr_peach_vscode
 TOPPERS/ASP3カーネルとアプリをVisual Studio Codeで開発可能にするための環境です．  
+
 下記リポジトリを大いに参考にしました．ここで深く感謝いたします．  
 [Azure IoT Hub with TOPPERS/ASP3](https://github.com/h7ga40/azure_iot_hub_peach)
 
@@ -13,6 +14,13 @@ TOPPERS/ASP3カーネルとアプリをVisual Studio Codeで開発可能にす�
   * IDE：[Visual Studio Code](https://code.visualstudio.com) (1.35.1で確認済み)
   * クロスコンパイラ：[arm-none-eabi Version 6-2017-q2-update](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/6-2017-q2-update)
   * デバッガ：[OpenOCD 0.10.0-12-20190422](https://github.com/gnu-mcu-eclipse/openocd/releases/tag/v0.10.0-12-20190422)
+
+## オリジナルからの変更点
+
+[TOPPERS/ASP3カーネル GR-PEACH簡易パッケージ](http://toppers.jp/asp3-e-download.html)からの変更点を列挙します
+
+* [Makefile.target](./asp3/target/gr_peach_gcc/Makefile.target) 21行目: 実行形態をRAM実行に変更（EXECUTE_ON = ROM）
+* [apps/sample1/Makefile](./apps/sample1/Makefile) 74行名: オブジェクトファイル名の拡張子を elf に変更（OBJEXT = elf）
 
 ## ライセンス等
 
