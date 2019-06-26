@@ -71,7 +71,7 @@ SRCDIR = ../..
 #
 #  オブジェクトファイル名の拡張子の設定
 #
-OBJEXT = 
+OBJEXT = elf
 
 #
 #  カーネルライブラリ（libkernel.a）のディレクトリ名
@@ -172,7 +172,7 @@ CFLAGS = $(COPTS) $(CDEFS) $(INCLUDES)
 #  アプリケーションプログラムに関する定義
 #
 APPLNAME = sample1
-APPLDIRS = $(SRCDIR)/sample
+APPLDIRS = .
 APPL_CFG = sample1.cfg
 APPL_CDL = sample1.cdl
 
@@ -207,12 +207,12 @@ INCLUDES := $(INCLUDES) -I$(TECSGENDIR) -I$(SRCDIR)/tecs_kernel
 .PHONY: all
 ifndef OMIT_TECS
 all: tecs
-	@$(MAKE) check
-#	@$(MAKE) check $(OBJNAME).bin
+#	@$(MAKE) check
+	@$(MAKE) check $(OBJNAME).bin
 #	@$(MAKE) check $(OBJNAME).srec
 else
-all: check
-#all: check $(OBJNAME).bin
+#all: check
+all: check $(OBJNAME).bin
 #all: check $(OBJNAME).srec
 endif
 
