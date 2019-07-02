@@ -28,9 +28,7 @@
         "-l"
     ],
 		"terminal.integrated.env.osx": {
-			"PATH": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/:${env:PATH}",
-			"TC_VERSION": "6.3.1.20170620",
-			"GCC_VERSION": "6.3.1"
+			"PATH": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/:/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/:${env:PATH}"
 		}
 	}
 }
