@@ -65,8 +65,8 @@
             },
             "osx": {
                 "MIMode": "gdb",
-                "MIDebuggerPath": "/usr/local/bin/arm-none-eabi-gdb",
-                "debugServerPath": "/usr/local/bin/openocd"
+                "MIDebuggerPath": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gdb",
+                "debugServerPath": "/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/openocd"
             },
             "windows": {
                 "preLaunchTask": "",
@@ -135,7 +135,7 @@
                         "text": "symbol-file sample1/asp.elf",
                         "description": "load file",
                         "ignoreFailures": false
-                    },
+                    }
                 ]
             }
         }
