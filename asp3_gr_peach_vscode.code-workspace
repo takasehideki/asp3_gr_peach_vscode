@@ -28,7 +28,14 @@
         "-l"
     ],
 		"terminal.integrated.env.osx": {
-			"PATH": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/:/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/:${env:PATH}"
+			"PATH": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin:/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin:${env:PATH}"
+		},
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+		"terminal.integrated.env.linux": {
+			"PATH": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin:/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin:${env:PATH}"
 		}
 	}
 }
