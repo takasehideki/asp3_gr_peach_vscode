@@ -60,8 +60,8 @@
             },
             "linux": {
                 "MIMode": "gdb",
-                "MIDebuggerPath": "/usr/bin/arm-none-eabi-gdb",
-                "debugServerPath": "/usr/bin/openocd"
+                "MIDebuggerPath": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gdb",
+                "debugServerPath": "/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/openocd"
             },
             "osx": {
                 "MIMode": "gdb",
