@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# TOPPERS files
+apps/*/asp.*
+apps/*/cfg*_out.*
+apps/*/kernel_cfg.*
+apps/*/offset.*
+apps/*/*.timestamp
+apps/*/gen
+apps/*/deps/*
+!.gitkeep
