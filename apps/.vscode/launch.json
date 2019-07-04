@@ -11,11 +11,11 @@
             "cwd": "${workspaceRoot}",
             "environment": [],
             "externalConsole": false,
-            "debugServerArgs": "-f interface/cmsis-dap.cfg -f target/renesas_rza1h_swd.cfg -c \"echo -n server_connection_OK\"\"",
+            "debugServerArgs": "-f interface/cmsis-dap.cfg -f target/renesas_rza1h_swd.cfg -c init",
             "serverLaunchTimeout": 20000,
             "filterStderr": true,
             "filterStdout": false,
-            "serverStarted": "server_connection_OK",
+            "serverStarted": "",
             "targetArchitecture": "ARM",
             "preLaunchTask": "",
             "setupCommands": [
@@ -66,7 +66,67 @@
             "osx": {
                 "MIMode": "gdb",
                 "MIDebuggerPath": "/usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gdb",
-                "debugServerPath": "/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/openocd"
+                "debugServerPath": "/usr/local/gnu-mcu-eclipse/openocd/0.10.0-12-20190422-2015/bin/openocd",
+                "setupCommands": [
+                    {
+                        "text": "-environment-cd ${workspaceRoot}",
+                        "description": "set cwd",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-gdb-set breakpoint pending on",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-gdb-set python print-stack none",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-gdb-set print object on",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-gdb-set print sevenbit-strings on",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "set mem inaccessible-by-default off",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-gdb-set auto-solib-add on",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-target-select remote localhost:3333",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "-list-thread-groups",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "monitor reset init",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "monitor halt",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "monitor arm semihosting enable",
+                        "ignoreFailures": false
+                    },
+                    {
+                        "text": "symbol-file sample1/asp.elf",
+                        "description": "load file",
+                        "ignoreFailures": false
+                    }
+                ]
             },
             "windows": {
                 "preLaunchTask": "",
