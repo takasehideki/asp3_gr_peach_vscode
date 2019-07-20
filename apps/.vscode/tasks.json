@@ -59,6 +59,41 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "write mbed drive",
+            "linux": {
+                "command": "rsync",
+                "args": [
+                    "-av",
+                    "--progress",
+                    "sample1/asp.bin",
+                    "/media/${env:USER}/MBED/"
+                ]
+            },
+            "osx": {
+                "command": "rsync",
+                "args": [
+                    "-av",
+                    "--progress",
+                    "sample1/asp.bin",
+                    "/Volumes/MBED/"
+                ]
+            },
+            "windows": {
+                "command": "C:\\Windows\\System32\\robocopy.exe",
+                "args": [
+                    "sample1",
+                    "j:\\",
+                    "asp.bin"
+                ],
+                "options": {
+                    "shell": {
+                        "executable": "C:\\Windows\\System32\\cmd.exe",
+                        "args":["/D", "/C"]
+                    }
+                }
+            }
         }
-    ]
+     ]
 }
